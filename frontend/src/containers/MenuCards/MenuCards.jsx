@@ -4,7 +4,7 @@ import Button from '../Button/Button'
 
 const MenuCards = () => {
   return (
-    <div class="minor">
+    <div className="minor">
       MenuCards
       <Button /> 
     </div>

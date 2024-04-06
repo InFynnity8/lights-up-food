@@ -3,7 +3,7 @@ import './Button.css';
 
 const Button = () => {
   return (
-    <div class="minor">Button</div>
+    <div className="minor">Button</div>
   )
 }
 
