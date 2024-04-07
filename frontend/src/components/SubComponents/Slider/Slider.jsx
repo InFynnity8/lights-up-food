@@ -114,7 +114,7 @@ import MenuCards from '../../../containers/MenuCards/MenuCards'
     {
       title: "Family Pack", 
       image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
-      description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs."
+      description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs, Sausage."
     }
   ]
 
