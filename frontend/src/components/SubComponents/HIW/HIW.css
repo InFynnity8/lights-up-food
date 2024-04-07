@@ -1,0 +1,71 @@
+.hiw-container {
+    min-height:65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.hiw {
+    width:100%;
+    min-height:40vh;
+    background-color: black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top:20px;
+}
+
+.procedure {
+    width:100%;
+    min-height:25vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom:10px;
+}
+
+.procedure .steps {
+    height: 15vh;
+    width: 300px;
+    margin:0 60px;
+    text-align:center;
+}
+
+.procedure .steps h1 {
+    color:rgb(206, 206, 206);
+}
+
+.procedure .steps p {
+    font-size: 18px;
+}
+
+.hiw h1 {
+    font-weight: 600;
+    color: white;
+}
+
+.hiw h1 span{
+    color:rgb(219, 0, 0);
+}
+
+
+@media screen and (max-width: 900px) { 
+   
+} 
+  
+@media screen and (max-width: 600px) { 
+ 
+
+}
+
+@media screen and (max-width: 460px) { 
+
+    .procedure .steps {
+        width: 200px;
+        margin:0 30px;
+        text-align:center;
+    }
+}

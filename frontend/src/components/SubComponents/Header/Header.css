@@ -1,0 +1,8 @@
+.head {
+    height:100vh;
+    background: black;
+}
+
+.head h1 {
+    color: white;
+}

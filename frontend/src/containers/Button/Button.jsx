@@ -1,9 +1,11 @@
 import React from 'react';
 import './Button.css';
 
-const Button = () => {
+const Button = (props) => {
   return (
-    <div className="minor">Button</div>
+   
+      <button type="submit" className="order-btn" >{props.name}</button>
+
   )
 }
 

@@ -1,0 +1,33 @@
+.contacts {
+    width:100%;
+    min-height: 75vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    flex-wrap:wrap;
+}
+
+.profile {
+    min-height: 60vh;
+    width: 500px;
+    background:red;
+}
+
+form {
+    min-height: 60vh;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    color:white;
+}
+
+form h1 {
+    color:white;
+    font-weight:600;
+}
+
+form h1 span {
+    color:rgb(219, 0, 0);
+}

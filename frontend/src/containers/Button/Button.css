@@ -1,0 +1,31 @@
+.order-btn {
+    width: 70%;
+    background: rgb(219, 0, 0);
+    border-radius: 15px;
+    border: none;
+    color: white;
+    height: 55px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 900px) { 
+    .order-btn {
+        font-size: 18px;
+    }
+} 
+  
+@media screen and (max-width: 600px) { 
+    .order-btn {
+        font-size: 17px;
+    }
+
+}
+
+@media screen and (max-width: 460px) { 
+    .order-btn {
+        font-size: 15px;
+    }
+
+}

@@ -6,7 +6,6 @@ const Menus = () => {
   return (
     <div>
       Menus
-      <MenuCards />
     </div>
   )
 }

@@ -4,6 +4,7 @@ import MenuCards from '../../../containers/MenuCards/MenuCards'
 
 
   const Slider = () => {
+
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [startScrollLeft, setStartScrollLeft] = useState(0);
@@ -88,44 +89,54 @@ import MenuCards from '../../../containers/MenuCards/MenuCards'
     };
   }, [isDragging, startScrollLeft, startX, timeoutId]);
 
+
+  const Menus = [
+    {
+      title: "Budget", 
+      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      description: "1 Ball of kenkey, Shito & Pepper, Fish."
+    },
+    {
+      title: "One Man", 
+      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      description: "1 Ball of kenkey, Shito & Pepper, Fish, Fried Eggs."
+    },
+    {
+      title: "Hungry", 
+      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      description: "2 Ball of kenkey, Shito & Pepper."
+    },
+    {
+      title: "Satisfactory", 
+      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs."
+    },
+    {
+      title: "Family Pack", 
+      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs."
+    }
+  ]
+
+
   return (
+   
     <div className="slider">
-        <div className="wrapper">
-        <i id="left" className="fa-solid fas fa-angle-left"></i>
-        <ul className="carousel">
-          <li className="card">
-            <div className="img"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png" alt="" draggable="false" /></div>
-            <h2 style={{ color: 'green', fontWeight: 'bold' }}>GeeksforGeeks</h2>
-            <span>Coding Platform</span>
-          </li>
-          <li className="card">
-            <div className="img"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png" alt="" draggable="false" /></div>
-            <h2 style={{ color: 'green', fontWeight: 'bold' }}>GeeksforGeeks</h2>
-            <span>Coding Platform</span>
-          </li>
-          <li className="card">
-            <div className="img"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png" alt="" draggable="false" /></div>
-            <h2 style={{ color: 'green', fontWeight: 'bold' }}>GeeksforGeeks</h2>
-            <span>Coding Platform</span>
-          </li>
-          <li className="card">
-            <div className="img"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png" alt="" draggable="false" /></div>
-            <h2 style={{ color: 'green', fontWeight: 'bold' }}>GeeksforGeeks</h2>
-            <span>Coding Platform</span>
-          </li>
-          <li className="card">
-            <div className="img"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png" alt="" draggable="false" /></div>
-            <h2 style={{ color: 'green', fontWeight: 'bold' }}>GeeksforGeeks</h2>
-            <span>Coding Platform</span>
-          </li>
-          <li className="card">
-            <div className="img"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png" alt="" draggable="false" /></div>
-            <h2 style={{ color: 'green', fontWeight: 'bold' }}>GeeksforGeeks</h2>
-            <span>Coding Platform</span>
-          </li>
-        </ul>
-        <i id="right" className="fa-solid fas fa-angle-right"></i>
-    </div>
+        <h1 className="header">Our <span>Special Kenkey</span> Menu</h1>
+      <div className="wrapper">
+          <i id="left" className="fa-solid fas fa-angle-left"></i>
+          <ul className="carousel">
+          {
+            Menus.map((menu, index)=>{
+            return( <MenuCards key={index}  title={menu.title} image={menu.image} description={menu.description} />)
+            })
+          }
+            
+          </ul>
+          <i id="right" className="fa-solid fas fa-angle-right"></i>
+      </div>
+
+      <a href="#">view our menu</a>
     </div>
   );
 };
