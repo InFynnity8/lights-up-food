@@ -1,25 +1,46 @@
 .contacts {
     width:100%;
-    min-height: 75vh;
+    min-height: 85vh;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 0 20px;
+    padding: 50px 20px;
     flex-wrap:wrap;
 }
 
 .profile {
-    min-height: 60vh;
+    min-height: 65vh;
     width: 500px;
-    background:red;
+    margin: 50px 50px 50px 0;
+}
+
+.profile p{
+    font-weight: 500;
+    font-size: 20px;
+    color:white;
+}
+
+.profile ul {
+    background: white;
+    min-height: 30vh;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 20px 30px;
 }
 
 form {
-    min-height: 60vh;
+    min-height: 65vh;
     width: 500px;
     display: flex;
     flex-direction: column;
+    font-size: 20px;
     color:white;
 }
 
@@ -30,4 +51,29 @@ form h1 {
 
 form h1 span {
     color:rgb(219, 0, 0);
+}
+
+form input {
+    color:white;
+    height: 50px;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+}
+
+form .send-btn {
+    outline:none;
+    border:none;
+    border-radius:20px;
+    background:red;
+    height: 40px;
+    color: white;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,4 +1,64 @@
 .footer {
     min-height: 40vh;
-    background:rgb(119, 119, 119);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding:20px 70px;
+    font-size: 19px;
+}
+
+.footer  .logo {
+    height: 100px;
+    width: 200px;
+    background:green;
+    z-index: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    margin-bottom:10px;
+}
+
+.footer .logo-inner {
+    height: 95px;
+    width: 250px;
+    background-image: linear-gradient(165deg,red, black);
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .logo-inner h1 {
+    padding-top:20px;
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.footer .social {
+    margin:10px;
+    width: 500px;
+    font-style: italic;
+    padding:0 20px;
+}
+
+.footer .links {
+    margin:10px;
+    width: 250px;
+}
+
+.footer .address {
+    margin:10px;
+    width: 250px;
+}
+
+.footer .address p {
+    line-height: 15px;
+    color:grey;
 }

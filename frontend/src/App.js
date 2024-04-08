@@ -4,6 +4,7 @@ import './App.css';
 import Home from './components/Home/Home.jsx';
 import Menu from './components/Menu/Menu.jsx';
 import Contact from './components/Contact/Contact.jsx';
+import Nopage from './components/Nopage/Nopage.jsx';
 import Navbar from './components/SubComponents/Navbar/Navbar.jsx';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
               <Route index  element={<Home />}/>
               <Route path= "/menu" element={<Menu />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<Nopage />} />
             </Route>
           </Routes>
         </BrowserRouter>

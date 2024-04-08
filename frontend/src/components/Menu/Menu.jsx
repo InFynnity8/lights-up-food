@@ -5,8 +5,7 @@ import Footer from '../SubComponents/Footer/Footer'
 
 const Menu = () => {
   return (
-    <div>
-      <h1>Menu</h1>
+    <div className="menu">
       <Menus />
       <Footer />
     </div>

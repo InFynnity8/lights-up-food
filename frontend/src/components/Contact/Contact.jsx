@@ -5,9 +5,8 @@ import Footer from '../SubComponents/Footer/Footer'
 
 const Contact = () => {
   return (
-    <div>
-      <h1>Contact</h1>
-      <Contacts />
+    <div className="contact">
+      <Contacts style={{ minHeight: '50vh', paddingBottom: '100px'}}/>
       <Footer />
     </div>
   )

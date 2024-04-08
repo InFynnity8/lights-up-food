@@ -8,8 +8,7 @@ import Footer from '../SubComponents/Footer/Footer';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="home">
       <Header />
       <Slider />
       <HIW />

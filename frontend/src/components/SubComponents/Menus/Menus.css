@@ -1,0 +1,18 @@
+.menus{
+    min-height: 100vh;
+    padding: 50px 70px;
+    /* display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap: wrap; */
+    background: green;
+}
+
+.menus .listed {
+    height:0px;
+    width: 50px;
+    margin: 20px;
+    /* display:flex;
+    align-items:center;
+    justify-content:center; */
+}

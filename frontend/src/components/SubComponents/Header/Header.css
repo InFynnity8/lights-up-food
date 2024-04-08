@@ -1,8 +1,85 @@
 .head {
-    height:100vh;
-    background: black;
+    min-height:110vh;
+    background: #000000;
+    padding: 0 50px 100px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .head h1 {
     color: white;
+    font-weight: 700;
+    font-size: 55px;
+    line-height: 57px;
+    
+}
+
+.head p {
+    font-size: 20px;
+    color:white;
+    width: 70%;
+    margin:20px 0px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: 'sans-serif';
+}
+
+.head .intro {
+    min-height: 70vh;
+    width: 600px;
+}
+
+
+
+.head .buttons {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+} 
+
+.head button {
+    width: 160px;
+    height: 50px;
+    font-size: 23px;
+    border-radius: 52px;
+    border: none;
+    font-weight: 500;
+}
+
+.head .order-btn-2  {
+    background: red;
+    color:white;
+    font-family: sans-serif;
+    transition: .3s;
+    margin-right: 15px; 
+}
+
+.head .order-btn-2:hover {
+    background: rgb(239, 243, 5);
+    color: red;
+}
+
+.head .menu-btn {
+    background: white;
+    color:red;
+    font-family: sans-serif;
+    transition: .3s;
+}
+
+.head .menu-btn:hover {
+    background: red;
+    color:white;
+}
+
+
+.head .cheers-img {
+    min-height: 85vh;
+    width: 400px;
+    border-radius: 45px;
+    background: rgb(252, 252, 186);
+    padding: 50px;
 }

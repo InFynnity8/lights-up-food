@@ -8,9 +8,9 @@
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    min-height: 80%; 
     flex-direction: column;
     min-height: 80vh;
+    padding:50px 0;
 } 
 
 .header {
@@ -33,7 +33,7 @@
             .wrapper i { 
                 height: 50px; 
                 width: 50px; 
-                background: rgb(219, 0, 0); 
+                background: rgba(219, 0, 0, 0.473); 
                 color: white;
                 text-align: center; 
                 line-height: 50px; 

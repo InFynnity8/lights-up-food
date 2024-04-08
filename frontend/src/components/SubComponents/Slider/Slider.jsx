@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from "react"; 
 import './Slider.css';
-import MenuCards from '../../../containers/MenuCards/MenuCards'
+import MenuCards from '../../../containers/MenuCards/MenuCards';
+import {Link} from 'react-router-dom';
 
 
   const Slider = () => {
@@ -92,27 +93,27 @@ import MenuCards from '../../../containers/MenuCards/MenuCards'
 
   const Menus = [
     {
-      title: "Budget", 
+      title: "Budget-Ghc20", 
       image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
       description: "1 Ball of kenkey, Shito & Pepper, Fish."
     },
     {
-      title: "One Man", 
+      title: "One Man-Ghc25", 
       image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
       description: "1 Ball of kenkey, Shito & Pepper, Fish, Fried Eggs."
     },
     {
-      title: "Hungry", 
+      title: "Hungry-Ghc30", 
       image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
       description: "2 Ball of kenkey, Shito & Pepper."
     },
     {
-      title: "Satisfactory", 
+      title: "Satisfactory-Ghc35", 
       image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
       description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs."
     },
     {
-      title: "Family Pack", 
+      title: "Family Pack-Ghc200", 
       image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
       description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs, Sausage."
     }
@@ -136,7 +137,7 @@ import MenuCards from '../../../containers/MenuCards/MenuCards'
           <i id="right" className="fa-solid fas fa-angle-right"></i>
       </div>
 
-      <a href="#">view our menu</a>
+      <Link to ="/menu" style={{color: 'rgba(219, 0, 0, 0.73)', fontSize: '20px'}}>view our menu</Link>
     </div>
   );
 };
