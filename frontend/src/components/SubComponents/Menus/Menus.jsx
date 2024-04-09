@@ -33,7 +33,15 @@ const Foods = [
 const Menus = () => {
   return (
     <div className="menus">
-     
+    {
+      Foods.map((food, index)=>{
+      return( 
+        <div className="listed">
+          <MenuCards key={index}  title={food.title} image={food.image} description={food.description} />
+        </div>
+      )
+      })
+    }
     </div>
   )
 }

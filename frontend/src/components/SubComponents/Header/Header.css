@@ -60,7 +60,7 @@
 
 .head .order-btn-2:hover {
     background: rgb(239, 243, 5);
-    color: red;
+    color: black;
 }
 
 .head .menu-btn {
@@ -71,8 +71,7 @@
 }
 
 .head .menu-btn:hover {
-    background: red;
-    color:white;
+    color:rgb(241, 198, 4);
 }
 
 
