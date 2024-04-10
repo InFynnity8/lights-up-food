@@ -1,0 +1,147 @@
+.order-page {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.order-page .back-btn {
+    width: 100px;
+    display:flex;
+    justify-content: left;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.order-page .ready-head {
+    width: 100%;
+    font-family:'Ojuju';
+    font-weight: 700;
+}
+
+.order {
+    min-height: 100vh;
+    padding-bottom: 40px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 2px solid grey;
+    margin: 0 100px;
+}
+
+.order .set1 {
+    margin-bottom: 20px;
+}
+
+.order .set2 {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order .manage-orders {
+    width:600px;
+    height: 500px;
+    border: 1px solid red;
+    box-shadow: 0px -1px 20px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px 10px;
+}
+
+.manage-orders .main-dishes {
+    height: 330px;
+    overflow-y: auto;
+    
+}
+
+.order .recipient-details {
+    width:500px;
+    height: 500px;
+    padding:0 50px;
+}
+
+.order .recipient-details h2 {
+    font-family: 'Ojuju', "sans serif";
+    font-weight: 500;
+    color:red;
+}
+
+
+
+.recipient-details form {
+    width:400px;
+    height: 500px;
+    display:flex;
+    flex-direction: column;
+
+}
+
+.recipient-details form input {
+    height: 50px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+    color:black;
+    border-bottom: 2px solid rgb(172, 172, 172);
+}
+
+.recipient-details form #prompt {
+    color:grey;
+    font-style: italic;
+    font-size: 15px;
+    margin-top:5px;
+}
+
+.recipient-details .make-payment{
+    width:400px;
+    height: 215px;
+    border: 1px solid red;
+    margin-top:15px;
+    box-shadow: 0px -1px 20px 1px rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+}
+
+
+
+.make-payment .enti-price {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.enti-price .entities {
+    display:flex;
+    justify-content: left;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.enti-price .gross-price {
+    display:flex;
+    justify-content: right;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.make-payment .pay {
+    font-weight: 600;
+    background-color: rgb(202, 0, 0);
+    border-radius: 50px;
+    width: 100%;
+    border: none;
+    color: white;
+    height: 35px;
+    cursor: pointer;
+}

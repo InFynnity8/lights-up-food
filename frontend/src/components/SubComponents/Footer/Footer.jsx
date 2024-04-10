@@ -14,7 +14,12 @@ const Footer = () => {
         </div>
         <p>Explore endless culinary delights with our website. 
         Delicious eats at your fingertips. <br/> Order now</p>
-        <div className="icons">icons</div>
+        <div className="icons">
+          <i class="ri-facebook-circle-fill"></i>
+          <i class="ri-linkedin-box-fill"></i>
+          <i class="ri-twitter-fill"></i>
+          <i class="ri-instagram-line"></i>
+        </div>
       </div>
 
       <div className="links">

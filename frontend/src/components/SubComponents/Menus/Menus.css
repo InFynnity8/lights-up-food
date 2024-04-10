@@ -1,18 +1,31 @@
 .menus{
     min-height: 100vh;
-    padding: 50px 70px;
-    /* display:flex;
+    padding-bottom: 40px;
+    display:flex;
     align-items:center;
-    justify-content:space-between;
-    flex-wrap: wrap; */
-    background: green;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    border-bottom: 2px solid grey;
+
 }
 
-.menus .listed {
-    height:0px;
-    width: 50px;
-    margin: 20px;
-    /* display:flex;
+.menus li {
+    height: 320px;
+    width: 250px;
+    margin: 10px;
+    border: 1px solid red;
+    display:flex;
     align-items:center;
-    justify-content:center; */
+    flex-direction: column; 
+    padding-bottom: 20px;
+    font-size: 13px;
+}
+
+ 
+  
+@media screen and (max-width: 780px) { 
+    .menus{
+        justify-content: center;
+    }
 }

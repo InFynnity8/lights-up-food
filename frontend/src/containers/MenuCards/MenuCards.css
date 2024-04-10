@@ -13,9 +13,8 @@
     display: flex; 
     cursor: pointer; 
     width: 100%; 
-    padding-bottom: 25px; 
+    padding-bottom: 20px; 
     align-items: center; 
-    /* justify-content: center;  */
     flex-direction: column; 
     overflow: hidden;
     border: 1px solid rgb(219, 0, 0);
@@ -34,13 +33,18 @@
 } 
   
 .card h2 { 
-    font-weight: 500; 
-    font-size: 1.56rem; 
+    font-weight: 500;  
+    font-size: 1.5rem; 
     margin: 10px 0 5px; 
 } 
   
 .card span { 
     color: #6a6d78; 
+} 
+
+
+.card p::-webkit-scrollbar { 
+    display: none; 
 } 
   
 

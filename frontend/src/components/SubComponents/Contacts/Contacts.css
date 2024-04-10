@@ -5,14 +5,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 50px 20px;
+    padding: 50px 50px;
     flex-wrap:wrap;
 }
 
 .profile {
     min-height: 65vh;
     width: 500px;
-    margin: 50px 50px 50px 0;
+    margin: 30px;
 }
 
 .profile p{
@@ -35,35 +35,47 @@
     padding: 20px 30px;
 }
 
-form {
+.profile ul li {
+    display: flex;
+    align-items: center;
+}
+
+.profile #iconic {
+    font-size: 25px;
+    margin-right: 10px;
+    color:rgb(219, 0, 0);
+}
+
+.contacts form {
     min-height: 65vh;
     width: 500px;
     display: flex;
     flex-direction: column;
     font-size: 20px;
     color:white;
+    margin: 30px;
 }
 
-form h1 {
+.contacts form h1 {
     color:white;
-    font-weight:600;
+    font-weight:700;
 }
 
-form h1 span {
+.contacts form h1 span {
     color:rgb(219, 0, 0);
 }
 
-form input {
+.contacts form input {
     color:white;
+    border-bottom: 1px solid white;
     height: 50px;
     margin-bottom: 20px;
     outline: none;
     border: none;
-    border-bottom: 1px solid white;
     background: transparent;
 }
 
-form .send-btn {
+.contacts form .send-btn {
     outline:none;
     border:none;
     border-radius:20px;

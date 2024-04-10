@@ -5,7 +5,7 @@ const HIW = () => {
   return (
     <div className="hiw-container">
        <div className="hiw">
-          <h1>How It <span>Works</span> </h1>
+          <h1>How It <span style={{ fontFamily: 'Ojuju'}}>Works</span> </h1>
        </div>
        <div className="procedure">
 

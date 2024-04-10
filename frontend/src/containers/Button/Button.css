@@ -1,12 +1,17 @@
 .order-btn {
-    width: 70%;
+    width: 100%;
     background: rgb(219, 0, 0);
-    border-radius: 15px;
+    border-radius: 20px;
     border: none;
     color: white;
-    height: 55px;
+    height: 34px;
     font-size: 20px;
     font-weight: 600;
+}
+
+#linked-btn {
+    width: 70%;
+    margin:0;
 }
 
 

@@ -2,6 +2,7 @@ import React, { useEffect,useState } from "react";
 import './Slider.css';
 import MenuCards from '../../../containers/MenuCards/MenuCards';
 import {Link} from 'react-router-dom';
+import Menus from '../../../asserts/menu-data.json';
 
 
   const Slider = () => {
@@ -91,39 +92,10 @@ import {Link} from 'react-router-dom';
   }, [isDragging, startScrollLeft, startX, timeoutId]);
 
 
-  const Menus = [
-    {
-      title: "Budget-Ghc20", 
-      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
-      description: "1 Ball of kenkey, Shito & Pepper, Fish."
-    },
-    {
-      title: "One Man-Ghc25", 
-      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
-      description: "1 Ball of kenkey, Shito & Pepper, Fish, Fried Eggs."
-    },
-    {
-      title: "Hungry-Ghc30", 
-      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
-      description: "2 Ball of kenkey, Shito & Pepper."
-    },
-    {
-      title: "Satisfactory-Ghc35", 
-      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
-      description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs."
-    },
-    {
-      title: "Family Pack-Ghc200", 
-      image: "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
-      description: "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs, Sausage."
-    }
-  ]
-
-
   return (
    
     <div className="slider">
-        <h1 className="header">Our <span>Special Kenkey</span> Menu</h1>
+        <h1 className="header">Our <span style={{ fontFamily: 'Ojuju'}}>Special Kenkey</span> Menu</h1>
       <div className="wrapper">
           <i id="left" className="fa-solid fas fa-angle-left"></i>
           <ul className="carousel">

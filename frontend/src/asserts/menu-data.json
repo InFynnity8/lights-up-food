@@ -1,0 +1,34 @@
+
+
+[
+    {
+      "title": "Budget-₵20", 
+      "image": "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      "description": "1 Ball of kenkey, Shito & Pepper, Fish.",
+      "price": "Gh₵20"
+    },
+    {
+      "title": "One Man-₵25", 
+      "image": "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      "description": "1 Ball of kenkey, Shito & Pepper, Fish, Fried Eggs.",
+      "price": "Gh₵25"
+    },
+    {
+      "title": "Hungry-₵30", 
+      "image": "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+     "description": "2 Ball of kenkey, Shito & Pepper.",
+     "price": "Gh₵30"
+    },
+    {
+      "title": "Satisfactory-₵35", 
+      "image": "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      "description": "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs.",
+      "price": "Gh₵35"
+    },
+    {
+      "title": "Family Pack-₵200", 
+      "image": "https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png",
+      "description": "2 Ball of kenkey, Shito & Pepper, 2 Fish, Fried Eggs, Sausage.",
+      "price": "Gh₵200"
+    }
+  ]
