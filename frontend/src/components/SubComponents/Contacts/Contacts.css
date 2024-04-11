@@ -65,13 +65,13 @@
     color:rgb(219, 0, 0);
 }
 
-.contacts form input {
+.contacts .contact-form input {
+    border: none;
     color:white;
     border-bottom: 1px solid white;
     height: 50px;
     margin-bottom: 20px;
     outline: none;
-    border: none;
     background: transparent;
 }
 

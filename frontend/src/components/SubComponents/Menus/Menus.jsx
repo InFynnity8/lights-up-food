@@ -1,7 +1,7 @@
 import React from 'react';
 import './Menus.css';
 import MenuCards from '../../../containers/MenuCards/MenuCards';
-import Foods from '../../../asserts/menu-data.json'
+import {menuData} from '../../../asserts/menu-data.js'
 
 const Menus = () => {
   return (
@@ -10,9 +10,9 @@ const Menus = () => {
     
       <ul className="menus">
         {
-          Foods.map((food, index)=>{
+          menuData.map((food, index)=>{
           return( 
-              <MenuCards key={index}  title={food.title} image={food.image} description={food.description} />
+              <MenuCards key={index}  title={food.title + "-₵" + food.price} image={food.image} description={food.description} />
           )})
         }
       </ul>

@@ -2,7 +2,7 @@ import React, { useEffect,useState } from "react";
 import './Slider.css';
 import MenuCards from '../../../containers/MenuCards/MenuCards';
 import {Link} from 'react-router-dom';
-import Menus from '../../../asserts/menu-data.json';
+import {menuData} from '../../../asserts/menu-data.js';
 
 
   const Slider = () => {
@@ -100,8 +100,8 @@ import Menus from '../../../asserts/menu-data.json';
           <i id="left" className="fa-solid fas fa-angle-left"></i>
           <ul className="carousel">
           {
-            Menus.map((menu, index)=>{
-            return( <MenuCards key={index}  title={menu.title} image={menu.image} description={menu.description} />)
+            menuData.map((menu, index)=>{
+            return( <MenuCards key={index}  title={menu.title  + "-₵" + menu.price} image={menu.image} description={menu.description} />)
             })
           }
             

@@ -1,8 +1,10 @@
 .order-page {
     display:flex;
     justify-content: center;
+    /* align-items: center; */
     flex-direction: column;
     padding-top: 30px;
+    width: 100%;
 }
 
 .order-page .back-btn {
@@ -40,6 +42,7 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .order .manage-orders {
@@ -52,10 +55,174 @@
 }
 
 .manage-orders .main-dishes {
-    height: 330px;
+    height: 280px;
     overflow-y: auto;
+
+}
+
+.main-dishes .dish {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    min-height: 85px;
+    margin: 7px 0;
+    width: 100%;
+    font-size: 13px;
+    flex-wrap: wrap;
+}
+
+.dish .checker {
+    width: 20px;
+    height: 20px;
+    font-weight: 100;
+    accent-color:  rgb(255, 196, 0);
+    margin: 3px 10px 3px 0;
+    cursor: pointer;
+}
+
+.main-dishes .img-description {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.main-dishes img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.main-dishes .dish-img {
+    height: 85px;
+    width: 125px;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.dish-description p {
+    line-height: 15px;
+}
+
+.main-dishes .dish-description {
+    width: 280px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.main-dishes .dish-price-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60px;
+    width: 80px;
+}
+
+.dish-price-quantity  .dish-price {
+    font-weight: 600;
+}
+
+.dish-price-quantity .dish-counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 15px;
+}
+
+.dish-counter .dish-quantity {
+    font-weight: 500;
+    height: 20px;
+    width: 30px;
+    padding: 0px;
+}
+
+.dish-counter button {
+    font-weight: 700;
+    height: 20px;
+    width: 25px;
+    border: none;
+    background-color: rgb(255, 196, 0);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manage-orders .divider {
+    width: 100%;
+    background-color: rgb(192, 186, 186);
+    height: 2px;
+    margin: 15px 0px;
     
 }
+
+.manage-orders .extras {
+    height: 150px;
+}
+
+.extras h6 {
+    height: 40px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.extras .item1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.item1 .okro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+}
+
+.okro .input {
+
+}
+
+.extras .item2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.item2 .beans {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.beans input {
+
+}
+
+.extras .checker {
+    width: 20px;
+    height: 20px;
+    font-weight: 100;
+    accent-color:  rgb(255, 196, 0);
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.manage-orders .extras h2{
+    font-family: 'Ojuju', "sans serif";
+    font-weight: 600;
+    color:red;
+    font-size: 23px;
+    padding-left: 30px;
+}
+
+
 
 .order .recipient-details {
     width:500px;
@@ -65,8 +232,9 @@
 
 .order .recipient-details h2 {
     font-family: 'Ojuju', "sans serif";
-    font-weight: 500;
+    font-weight: 600;
     color:red;
+    font-size: 23px;
 }
 
 
@@ -145,3 +313,16 @@
     height: 35px;
     cursor: pointer;
 }
+
+/* @media screen and (max-width: 600px) {
+    .order-page {
+        background: green;
+    }
+    .manage-order{
+        margin:0;
+    }
+
+    .recipient-details .set1{
+        margin:0;
+    }
+} */

@@ -16,7 +16,7 @@ const Contacts = (props) => {
           <li> <i className="ri-time-fill" id="iconic"></i> 10:00am - 5:00pm</li>
         </ul>
       </div>
-      <form>
+      <form className='contact-form'>
         <h1 style={{ fontFamily: 'Ojuju'}}><span style={{ fontFamily: 'Ojuju'}}>Contact</span> Us</h1>
         <p>Feel free to contact us anytime. We will get back to you as soon as we can!</p>
         <input type="text" name="Name" placeholder="Name"/>

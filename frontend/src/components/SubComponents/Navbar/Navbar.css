@@ -1,12 +1,12 @@
 .navigator {
-    /* display:flex;
-    align-items: center;
-    justify-content: center; */
     width: 100%;
-    background: black;
     height: 150px;
+    background: inherit ;
 }
 
+.navigator.menu-order-path{
+    display: 'none';  
+}
 
 
 .navbar-main {
@@ -65,16 +65,17 @@
     justify-content: space-around;
     height: 50px;
     width: 45%;
-    background: white;
     border-radius: 52px;
     font-size: 20px;
     padding: 0 10px 0 200px;
     margin-top: 15px;
+    transition:.2s ease-in-out;
 }
 
-li Link {
+li .nav-link {
     text-decoration: none;
-    color: white;
+    font-weight: 600;
+
 }
 
 @media screen and (max-width: 1080px) { 

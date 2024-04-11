@@ -1,16 +1,47 @@
 import React, {useState} from 'react';
 import './Order.css';
 import Footer from '../SubComponents/Footer/Footer';
-import Dishes from '../../asserts/menu-data.json';
+import {menuData} from '../../asserts/menu-data.js';
 
+
+const getDefaultCart = () =>{
+    let cart = {}
+    for (let i=0; i < menuData.length; i++){
+        cart[i] = 0
+    }
+    return cart;
+} 
+
+
+ 
 
 
 const Order = () => {
 
-    const [dishes, setDishes] = useState();
-    const [extras, setExtras] = useState();
-    const [total, setTotal] = useState();
+    const [okro, setOkro] = useState();
+    const [beans, setBeans] = useState();
+    const [quantity, setQuantity] = useState(getDefaultCart());
 
+    const increment = (itemId) => {
+        setQuantity((prev) => ({...prev, [itemId]: prev[itemId] + 1}))
+    }
+
+    const decrement = (itemId) => {
+        setQuantity((prev) => ({...prev, [itemId]: prev[itemId] - 1}))
+    }
+
+
+    const getTotalCartAmount = () =>{
+        let totalAmount = 0;
+        for (const item in quantity){
+            if(quantity[item]> 0){
+               let itemInfo =   menuData.find((dish, index) => index === Number(item));
+               totalAmount += quantity[item]  * itemInfo.price 
+            }
+        }
+    
+        return totalAmount;
+    }
 
     return(
         <div className="order-page">
@@ -25,28 +56,29 @@ const Order = () => {
                         <form className="manage-orders">
                             <div className='main-dishes'>
                                 {
-                                    Dishes.map( (dish, index) => {
+                                    menuData.map( (dish, index) => {
                                         return(
                                             <div className='dish' key={index}>
 
-                                                <input type='checkbox' name={dish.title}/>
+                                                <input type='checkbox' name={dish.title} className="checker"/>
 
                                                 <label className='img-description' for={dish.title}>
                                                     <div className='dish-img'>
                                                         <img src={dish.image} alt=""/>
                                                     </div>
                                                     <div className='dish-description'>
-                                                        <h5>{dish.title}</h5>
+                                                        <h6 style={{ fontFamily: 'Ojuju', fontWeight: '700'}}>{dish.title}</h6>
                                                         <p>{dish.description}</p>
                                                     </div>
                                                 </label>
 
                                                 <div className='dish-price-quantity'>
-                                                    <p className='dish-price'>{dish.price}</p>
-                                                    <div className='dish-quantity'>
-                                                        <button type='button' className='minus-btn'>-</button>
-                                                        <p className='dish-quantity'></p>
-                                                        <button type='button' className='plus-btn'>+</button>
+                                                    <p className='dish-price'>-Gh₵{dish.price}</p>
+                                                    <div className='dish-counter'>
+                                                        <button type='button' className='minus-btn' onClick={() => decrement(index)}>-</button>
+                                                        <input className='dish-quantity' value= {quantity[index]} 
+                                                        onChange={(e)=>{setQuantity((prev) => ({...prev, [index]: Number(e.target.value)}))}}/>
+                                                        <button type='button' className='plus-btn' onClick={() => increment(index)}>+</button>
                                                     </div>
                                                 </div>
 
@@ -55,9 +87,27 @@ const Order = () => {
                                     })
                                 }
                             </div>
+                            <div className='divider'></div>
                             <div className='extras'>
                                 <h2>Extras</h2>
-                            
+                                <div className='item1'>
+                                    <input type='checkbox' name="Okro" className="checker"/>
+                                    <label className='okro' for="Okro">
+                                        <h6>Okro Stew</h6>
+                                        <input value={'Gh₵' + okro} type='number' placeholder='Gh₵' style={{paddingLeft:'10px'}}
+                                        onChange= {(e) => { setOkro(e.target.value)}}/>
+                                    </label>
+                                </div>
+                                <div className='item2'>
+                                    <input type='checkbox' name="Beans" className="checker"/>
+                                    <label className='beans' for="Beans">
+                                        <h6>Beans</h6>
+                                        <input value={beans} type='number' placeholder='Gh₵' style={{paddingLeft:'10px'}}
+                                        onChange= {(e) => { setBeans(e.target.value); console.log(e.target.value)}}/>
+                                    </label>
+                                </div>
+                                <p style={{marginTop: '10px', fontStyle: 'italic',  color: 'grey', fontSize:'14px', marginLeft:'30px'}}>NB: Okro and Beans price start from ₵3.00</p>
+                                        
                             </div>
                         
                         </form>
@@ -77,9 +127,9 @@ const Order = () => {
                                             <p>Total</p>
                                         </div>      
                                         <div className='gross-price '>
-                                            <p style={{color:'grey'}}>{'Gh₵ ' + dishes }</p>
-                                            <p style={{color:'grey'}}>{'Gh₵ ' + extras }</p>
-                                            <p>{'Gh₵ ' + total }</p>
+                                            <p style={{color:'grey'}}>{'Gh₵ ' + getTotalCartAmount() }</p>
+                                            <p style={{color:'grey'}}>{'Gh₵ '  }</p>
+                                            <p>Gh₵ { getTotalCartAmount() }</p>
                                         </div>
                                     </div>
                                     <button type="submit" className='pay col-12' >Make Payment</button>
