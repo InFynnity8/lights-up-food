@@ -1,24 +1,40 @@
 const nodemailer = require('nodemailer');
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 
 const app = express();
-app.use(bodyParser.urlencoded({extended: true}));
 
-app.post("/", (req, res) => {
+app.use(cors());
+// app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
+
+
+app.get("/", (req, res) => {
+  res.send('hello');
 })
 
-app.post("/failure", (req, res) => {
-  res.redirect("/")
+app.post("/contact", (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message;
+  console.log(email)
+  res.send("Thank your for reaching onto us " + name)
+})
+ 
+app.post("/order", (req, res) => {
+  const name = req.body.name;
+  const phoneNumber = req.body.phoneNumber;
+  const location = req.body.location;
+  const quantity = req.body.quantity;
+  const totalAmount = req.body.totalAmount;
+  console.log(name , phoneNumber, location, quantity, totalAmount);
+  res.send("received successfully")
 })
 
-app.post("/success", (req, res) => {
-  res.redirect("/")
-})
-
-app.listen(3000, () => {
-  console.log("server started on port 3000")
+app.listen(5000, () => {
+  console.log("server started on port 5000")
 });
 
 
@@ -61,5 +77,3 @@ const main = async () => {
         }); 
 
 }
-
-main();
