@@ -3,8 +3,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require('cors');
 
+require("dotenv").config();
 const app = express();
-
 app.use(cors());
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -61,11 +61,12 @@ const main = async () => {
       const mailOptions = {
         from: {
           name: 'Fynn',
-          address: 'sackeyemmanuelfynn@gmail.com'
+          address: 'samuelasibie@gmail.com'
         },
-        to: 'daddybosco3@gmail.com',
+        to: 'opokumavis261@gmail.com',
         subject: 'Lights Up Orders',
-        text: 'That was easy!'
+        text: 'That was easy!',
+        html: '<b style="color:blue;">Yes an html</b>'
       };
 
       const info = await transporter.sendMail(mailOptions, (error, info) => {
@@ -77,3 +78,5 @@ const main = async () => {
         }); 
 
 }
+
+// main()
