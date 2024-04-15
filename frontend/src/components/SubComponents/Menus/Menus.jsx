@@ -5,7 +5,7 @@ import {menuData} from '../../../asserts/menu-data.js'
 
 const Menus = () => {
   return (
-    <>
+    <div className="whole-menu">
       <h1 className="header">Our <span style={{ fontFamily: 'Ojuju'}}>Special Kenkey</span> Menu</h1>
     
       <ul className="menus">
@@ -17,7 +17,7 @@ const Menus = () => {
         }
       </ul>
       
-    </>
+    </div>
   )
 }
 

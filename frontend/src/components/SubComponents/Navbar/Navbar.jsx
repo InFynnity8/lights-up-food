@@ -10,26 +10,30 @@ const Navbar = () => {
   const [navigatorColor, setNavigatorColor] = useState('black');
   const [navbarColor, setNavbarColor] = useState('white');
   const [navLinkColor, setNavLinkColor] = useState('black');
+  const [navPath, setNavPath] = useState('/');
   const location = useLocation();
   
   useEffect( () => {
+    setNavPath(location.pathname)
     if(location.pathname === '/menu/order') {
       document.querySelector('.navigator').classList.add("menu-order-path")
     }
-  },[])
+  },[navPath])
   
-  console.log(location.pathname )
+  console.log(location.pathname)
  
-  const handleNavColor = (path) => {
-    console.log(path)
-      if (path === 'home' || path === 'contact'){
+  const handleNavColor = () => {
+    console.log(navPath)
+      if (navPath === '/' || navPath === '/contact'){
         setNavigatorColor('black')
         setNavbarColor('white')
         setNavLinkColor('black')
-      }else if(path === 'menu' || path === 'menu/order'){
+        console.log('black')
+      }else if(navPath === '/menu' || navPath === '/menu/order'){
         setNavigatorColor('white')
         setNavbarColor('black')
         setNavLinkColor('white')
+        console.log('white')
       }
   }
 
@@ -44,10 +48,12 @@ const Navbar = () => {
               <div className="logo-inner"><h1>Lights Up  
               <span style={{color: 'yellow', fontSize: '23px', fontWeight: '900'}}> FOOD</span></h1></div>
             </div>
-            <li><Link style={{color: navLinkColor} } to="/"  className='nav-link' onClick={() => handleNavColor('home')}>Home</Link></li>
-            <li><Link style={{color: navLinkColor} } to="/menu" className='nav-link' onClick={() => handleNavColor('menu')}>Menu</Link></li>
-            <li><Link style={{color: navLinkColor} } to="/contact" className='nav-link' onClick={() => handleNavColor('contact')}>Contact Us</Link></li>
+            <li><Link style={{color: navLinkColor} } to="/"  className='nav-link' onClick={handleNavColor}>Home</Link></li>
+            <li><Link style={{color: navLinkColor} } to="/menu" className='nav-link' onClick={handleNavColor}>Menu</Link></li>
+            <li><Link style={{color: navLinkColor} } to="/contact" className='nav-link' onClick={handleNavColor}>Contact Us</Link></li>
           </ul>
+
+          <div className='toggler' title="Menu"><i className="ri-menu-3-line"></i></div>
       </div>
 
         <Outlet />

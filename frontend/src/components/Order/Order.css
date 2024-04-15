@@ -16,6 +16,7 @@
     outline: none;
     cursor: pointer;
     font-size: 16px;
+    align-items: center;
 }
 
 .order-page .ready-head {
@@ -36,6 +37,7 @@
 
 .order .set1 {
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .order .set2 {
@@ -228,6 +230,10 @@
     width:500px;
     height: 500px;
     padding:0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: content;
+    flex-direction: column;
 }
 
 .order .recipient-details h2 {
@@ -314,15 +320,44 @@
     cursor: pointer;
 }
 
-/* @media screen and (max-width: 600px) {
-    .order-page {
-        background: green;
-    }
-    .manage-order{
-        margin:0;
+@media screen and (max-width: 1300px) {
+    .order {
+        margin: 0px;
     }
 
-    .recipient-details .set1{
-        margin:0;
+    .order .set1 {
+        padding: 0 20px;
     }
-} */
+
+    .order .recipient-details{
+        margin-top: 50px;
+        padding:0;
+    }
+
+    .order .set2 {
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    .order .recipient-details{
+        margin-top: 50px;
+        padding:0;
+    }
+}
+
+.main-dishes .dish-description {
+    width: 280px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .main-dishes .dish-description {
+        width: 200px;
+        margin-right: 0px;
+        background: red;
+    }
+}

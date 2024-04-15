@@ -1,9 +1,16 @@
+.whole-menu {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+}
+
 .menus{
-    min-height: 100vh;
+    min-height: 70vh;
     padding-bottom: 40px;
     display:flex;
     align-items:center;
-    justify-content: space-between;
+    justify-content: left;
     flex-wrap: wrap;
     width: 90%;
     border-bottom: 2px solid grey;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './Order.css';
 import Footer from '../SubComponents/Footer/Footer';
 import {menuData} from '../../asserts/menu-data.js';
@@ -18,23 +18,6 @@ const getDefaultCart = () =>{
 
 
 const Order = () => {
-    const [name, setName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [location, setLocation] = useState('');
-    const [okro, setOkro] = useState();
-    const [beans, setBeans] = useState();
-    const [quantity, setQuantity] = useState(getDefaultCart());
-    
-
-    const increment = (itemId) => {
-        setQuantity((prev) => ({...prev, [itemId]: prev[itemId] + 1}))
-    }
-
-    const decrement = (itemId) => {
-        setQuantity((prev) => ({...prev, [itemId]: prev[itemId] - 1}))
-    }
-
-
     const getTotalCartAmount = () =>{
         let totalAmount = 0;
         for (const item in quantity){
@@ -46,11 +29,35 @@ const Order = () => {
     
         return totalAmount;
     }
+    
+
+    const [name, setName] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [location, setLocation] = useState('');
+    const [okro, setOkro] = useState(0);
+    const [beans, setBeans] = useState(0);
+    const [quantity, setQuantity] = useState(getDefaultCart());
+    const [totalAmount, setTotalAmount] = useState(getTotalCartAmount());
+    const [grossAmount, setGrossAmount] = useState(0);
+
+
+    useEffect(()=>{
+        setTotalAmount(getTotalCartAmount());
+        setGrossAmount(totalAmount + okro + beans)
+    }, [okro, beans, quantity, totalAmount, grossAmount])
+
+    const increment = (itemId) => {
+        setQuantity((prev) => ({...prev, [itemId]: prev[itemId] + 1}))
+    }
+
+    const decrement = (itemId) => {
+        setQuantity((prev) => ({...prev, [itemId]: prev[itemId] > 0? (prev[itemId] - 1):(prev[itemId] = 0)}))
+    }
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {const response = await axios.post('http://localhost:5000/order', {name, phoneNumber, location, quantity})
+        try {const response = await axios.post('http://localhost:5000/order', {name, phoneNumber, location, quantity, totalAmount,okro,beans, grossAmount})
         alert(response.data)  }  
         catch (error) {
             console.log(error)
@@ -61,7 +68,7 @@ const Order = () => {
         <div className="order-page">
         <div className="order">
                 <div className='set1'>
-                    <button type='button' className='back-btn' >Back</button>
+                    <button type='button' className='back-btn' ><i class="ri-arrow-left-line"></i>Back</button>
                     <h1 className="ready-head">Ready to Take  
                     <span style={{ fontFamily: 'Ojuju',  color: 'red'}}> your Order!</span> </h1>
                 </div>
@@ -93,7 +100,7 @@ const Order = () => {
                                                     <div className='dish-counter'>
                                                         <button type='button' className='minus-btn' onClick={() => decrement(index)}>-</button>
                                                         <input className='dish-quantity' value= {quantity[index]} 
-                                                        onChange={(e)=>{setQuantity((prev) => ({...prev, [index]: Number(e.target.value)}))}}/>
+                                                        onChange={(e)=>{setQuantity((prev) => ({...prev, [index]: !isNaN(e.target.value) ? Number(e.target.value) : alert("Enter a valid quantity")}))}}/>
                                                         <button type='button' className='plus-btn' onClick={() => increment(index)}>+</button>
                                                     </div>
                                                 </div>
@@ -111,7 +118,7 @@ const Order = () => {
                                     <label className='okro' htmlFor="Okro">
                                         <h6>Okro Stew</h6>
                                         <input value={okro} type='number' placeholder='Gh₵' style={{paddingLeft:'10px'}}
-                                        onChange= {(e) => { (!isNaN(e.target.value) && e.target.value >= 3) || (e.target.value == 0)? setOkro(Number(e.target.value)): setOkro(3)}}/>
+                                        onChange= {(e) => { (!isNaN(e.target.value) && e.target.value >= 3) || (e.target.value === 0)? setOkro(Number(e.target.value)): setOkro(3)}}/>
                                     </label>
                                 </div>
                                 <div className='item2'>
@@ -119,7 +126,7 @@ const Order = () => {
                                     <label className='beans' htmlFor="Beans">
                                         <h6>Beans</h6>
                                         <input value={beans} type='number' placeholder='Gh₵' style={{paddingLeft:'10px'}}
-                                        onChange= {(e) => { (!isNaN(e.target.value) && e.target.value >= 3) || (e.target.value == 0)? setBeans(Number(e.target.value)): setBeans(3)}}/>
+                                        onChange= {(e) => { (!isNaN(e.target.value) && e.target.value >= 3) || (e.target.value === 0)? setBeans(Number(e.target.value)): setBeans(3)}}/>
                                     </label>
                                 </div>
                                 <p style={{marginTop: '10px', fontStyle: 'italic',  color: 'grey', fontSize:'14px', marginLeft:'30px'}}>NB: Okro and Beans price start from ₵3.00</p>
@@ -146,9 +153,9 @@ const Order = () => {
                                             <p>Total</p>
                                         </div>      
                                         <div className='gross-price '>
-                                            <p style={{color:'grey'}}>{'Gh₵ ' + getTotalCartAmount() }</p>
-                                            <p style={{color:'grey',direction: 'rtl'}}>Gh₵ {isNaN(okro) && isNaN(beans)? 0 : (okro + beans)} </p>
-                                            <p>Gh₵ {isNaN(okro) && isNaN(beans)? 0 : ((okro) + beans + getTotalCartAmount()) }</p>
+                                            <p style={{color:'grey'}}>{'Gh₵ ' + totalAmount }</p>
+                                            <p style={{color:'grey'}}>Gh₵ {isNaN(okro) && isNaN(beans)? 0 : (okro + beans)} </p>
+                                            <p>Gh₵ {isNaN(okro) && isNaN(beans)? 0 : (okro + beans + totalAmount) }</p>
                                         </div>
                                     </div>
                                     <button type="submit" className='pay col-12' >Make Payment</button>

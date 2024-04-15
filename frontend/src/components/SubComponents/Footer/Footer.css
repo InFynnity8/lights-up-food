@@ -70,3 +70,81 @@
     line-height: 15px;
     color:grey;
 }
+
+@media screen and (max-width: 1100px) { 
+    .footer {
+        padding:20px 100px;
+        font-size: 19px;
+        justify-content: left;
+        
+    }
+
+    .footer .social {
+        width: 500px;
+        margin: 0;
+    }
+    
+    .footer .links {
+        margin:0;
+    }
+    
+    .footer .address {
+        margin:0;
+        line-height: 20px;
+    }
+} 
+  
+@media screen and (max-width: 600px) { 
+    .footer {
+        padding:20px 100px;
+        font-size: 19px;
+        justify-content: left;
+        
+    }
+
+    .footer .social {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .footer .links {
+        margin:0;
+        margin-bottom: 20px;
+    }
+    
+    .footer .address {
+        margin:0;
+    }
+
+    .footer .address p{
+        line-height: 25px;
+    }
+
+}
+
+@media screen and (max-width: 460px) { 
+    .footer {
+        padding:20px 100px;
+        font-size: 19px;
+        justify-content: left;
+        
+    }
+
+    .footer .social {
+        width: 500px;
+        margin: 0;
+    }
+    
+    .footer .links {
+        margin:0;
+        margin-bottom: 20px;
+    }
+    
+    .footer .address {
+        margin:0;
+    }
+
+    .footer .address p{
+        line-height: 25px;
+    }
+} 
