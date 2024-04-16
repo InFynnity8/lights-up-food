@@ -26,12 +26,12 @@ const Navbar = () => {
         setNavigatorColor('black')
         setNavbarColor('white')
         setNavLinkColor('black')
-        setNavDisplay('inline-block')
+        setNavDisplay('flex')
       }else if(location.pathname === '/menu'){
         setNavigatorColor('white')
         setNavbarColor('black')
         setNavLinkColor('white')
-        setNavDisplay('inline-block') 
+        setNavDisplay('flex') 
       }else if(location.pathname === '/menu/order'){
         setNavigatorColor('white')
         setNavbarColor('black')
