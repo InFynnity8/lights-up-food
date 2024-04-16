@@ -3,7 +3,7 @@ import './Order.css';
 import Footer from '../SubComponents/Footer/Footer';
 import {menuData} from '../../asserts/menu-data.js';
 import axios from 'axios'
-
+import { useNavigate } from 'react-router-dom';
 
 const getDefaultCart = () =>{
     let cart = {}
@@ -12,10 +12,6 @@ const getDefaultCart = () =>{
     }
     return cart;
 } 
-
-
- 
-
 
 const Order = () => {
     const getTotalCartAmount = () =>{
@@ -39,7 +35,7 @@ const Order = () => {
     const [quantity, setQuantity] = useState(getDefaultCart());
     const [totalAmount, setTotalAmount] = useState(getTotalCartAmount());
     const [grossAmount, setGrossAmount] = useState(0);
-
+    const navigate = useNavigate();
 
     useEffect(()=>{
         setTotalAmount(getTotalCartAmount());
@@ -68,7 +64,7 @@ const Order = () => {
         <div className="order-page">
         <div className="order">
                 <div className='set1'>
-                    <button type='button' className='back-btn' ><i class="ri-arrow-left-line"></i>Back</button>
+                    <button type='button' className='back-btn' onClick={()=>navigate(-1)}><i class="ri-arrow-left-line"></i> Back</button>
                     <h1 className="ready-head">Ready to Take  
                     <span style={{ fontFamily: 'Ojuju',  color: 'red'}}> your Order!</span> </h1>
                 </div>

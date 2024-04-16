@@ -4,9 +4,6 @@
     max-height: 160px;
 }
 
-.navigator.menu-order-path{
-    display: 'none';  
-}
 
 
 .navbar-main {
@@ -18,7 +15,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-
 }
 
 .navbar-main .logo {
@@ -75,7 +71,11 @@
 li .nav-link {
     text-decoration: none;
     font-weight: 600;
+    transition:.1s;
+}
 
+li .nav-link:hover {
+    transform: translateY(-2px);
 }
 
 
@@ -90,7 +90,71 @@ li .nav-link {
     z-index: 2000;
     right: 50px;
     top: 40px;
-    background-color: black;
+    padding: 0;
+}
+
+.responsive-menu {
+    position: fixed;
+    margin-top: -150px;
+    font-size: 20px;
+    list-style:none;
+    background: rgba(0, 0, 0, 0.753);
+    backdrop-filter: blur(50px);
+    height: 105vh;
+    width: 100%;
+    z-index:3000;
+    padding: 40px;
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.responsive-menu .logo {
+    height: 100px;
+    width: 200px;
+    background:green;
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    margin-top: 50px;
+}
+
+.responsive-menu .logo-inner {
+    height: 95px;
+    width: 250px;
+    background-image: linear-gradient(165deg,red, black);
+    z-index: 10;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.responsive-menu .logo-inner h1 {
+    padding-top:20px;
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    line-height: 20px;
+    font-family: "Ojuju", sans-serif;
+}
+
+li .nav-link-res {
+    text-decoration: none;
+    font-weight: 600;
+    transition:.3s;
+    color:white;
+}
+
+li .nav-link-res:hover {
+    color:rgb(212, 3, 3);
 }
 
 @media screen and (max-width: 1080px) { 
@@ -99,11 +163,27 @@ li .nav-link {
         height:0;
     }
 
-    li  {
+    .desktop-menu li  {
         display: none;
     }
 
     .toggler {
+        display: inline-block;
+    }
+
+    .ri-menu-3-line{
+        display: inline-block;
+    }
+
+    .ri-close-fill {
+        display: none;
+    }
+
+    .ri-menu-3-line.toggled{
+        display: none;
+    }
+
+    .ri-close-fill.toggled {
         display: inline-block;
     }
 
@@ -113,27 +193,8 @@ li .nav-link {
 
     .navbar-main .logo {
         left: 50px;
-    }
-
-}
-
-
-@media screen and (max-width: 1080px) { 
-    .navbar-main ul {
-        width:0;
-        height:0;
-    }
-
-    li  {
-        display: none;
-    }
-
-    .toggler {
-        display: inline-block;
-    }
-
-    .navbar-main ul {
-        position: unset;
+        height: 75px;
+        width: 155px;
     }
 
     .navbar-main .logo-inner {
@@ -141,12 +202,8 @@ li .nav-link {
         width: 150px;
     }
 
-    .navbar-main .logo{
-        height: 75px;
-        width: 155px;
-    }
-
     .navbar-main .logo-inner h1 {
         font-size: 25px;
     }
 }
+

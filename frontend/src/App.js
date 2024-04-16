@@ -11,6 +11,7 @@ import Navbar from './components/SubComponents/Navbar/Navbar.jsx';
 const App = () => {
   return (
    <div >
+
         <BrowserRouter>
           <Routes>
             <Route  path="/" element={<Navbar />}>
